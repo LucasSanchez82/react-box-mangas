@@ -3,7 +3,6 @@ import axios from 'axios';
 import DownloadArrayToJsonBtn from './DownloadArrayToJsonBtn';
 import dataJson from "./../data/data.json"
 import Searchbar from './Searchbar';
-import Box from './Box';
 
 
 const options = {
@@ -39,13 +38,9 @@ const Home = () => {
 
                 }).catch(function (error) {
                     console.log(error);
-                    setData([
-                        { link: "google.com", title: "titre1", image: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg", synopsis: "mon synopsis" },
-                        { link: "google.com", title: "bleach", image: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg", synposis: "l'histoire des shinigamis" }
-                    ]);
                 });
         }
-    }, [])
+    }, [data])
 
     return (
         <div>
@@ -53,9 +48,8 @@ const Home = () => {
                 <h1>Titre de mon projet streaming</h1>
 
             </header>
-            <Searchbar />
+            <Searchbar data={data} />
             <DownloadArrayToJsonBtn data={data} />
-            <Box data={data} />
         </div>
     );
 };

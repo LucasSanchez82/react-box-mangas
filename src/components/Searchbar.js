@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Boxs from './Boxs';
 
-const Searchbar = () => {
+const Searchbar = (props) => {
+    const [filteredData, setFilteredData] = useState([]);
+    useEffect(() => { setFilteredData(props.data) } //chargement au demarrage de la page
+        , [props.data]);
+
+    const handleChange = (e) => {
+        setFilteredData(props.data.filter(el => el.title.toUpperCase().includes(e.target.value.toUpperCase())));
+    }
     return (
-        <input onChange={(e) => console.log(e)} type="text" name="searchbar" id="searchbar" />
+        <div>
+            <input onChange={handleChange} type="text" name="searchbar" id="searchbar" />
+            <Boxs data={filteredData} />
+        </div>
     );
 };
 
