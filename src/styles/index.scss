@@ -1,0 +1,13 @@
+@import "./settings";
+@import './components/btn';
+@import './components/box';
+@import './components/animations';
+
+body {
+    box-sizing: border-box;
+}
+
+h3 {
+    background-color: $color-1;
+    border-radius: 8px;
+}
