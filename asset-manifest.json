@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/react-box-mangas/static/js/main.c83cfa94.js",
+    "main.css": "/react-box-mangas/static/css/main.12c74be0.css",
+    "main.js": "/react-box-mangas/static/js/main.d205cd89.js",
     "index.html": "/react-box-mangas/index.html",
-    "main.c83cfa94.js.map": "/react-box-mangas/static/js/main.c83cfa94.js.map"
+    "main.12c74be0.css.map": "/react-box-mangas/static/css/main.12c74be0.css.map",
+    "main.d205cd89.js.map": "/react-box-mangas/static/js/main.d205cd89.js.map"
   },
   "entrypoints": [
-    "static/js/main.c83cfa94.js"
+    "static/css/main.12c74be0.css",
+    "static/js/main.d205cd89.js"
   ]
 }
