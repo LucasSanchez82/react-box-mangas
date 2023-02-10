@@ -11,7 +11,11 @@ const Boxs = (props) => {
     })
 
     const handleScroll = () => {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        console.log("scroll");
+        console.log("innerHeight : " + window.innerHeight)
+        console.log("scrollY : " + window.scrollY);
+        console.log("document.offsetHeight : " + document.body.offsetHeight);
+        if ((window.innerHeight + window.scrollY + 15) >= document.body.offsetHeight) {
             setSliceEnd((prevSliceEnd) => prevSliceEnd + 10);
         }
     };

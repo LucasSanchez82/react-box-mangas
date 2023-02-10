@@ -48,8 +48,8 @@ const Home = () => {
                 <h1>Titre de mon projet streaming</h1>
 
             </header>
-            <Searchbar data={data} />
             <DownloadArrayToJsonBtn data={data} />
+            <Searchbar data={data} />
         </div>
     );
 };
