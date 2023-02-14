@@ -20,34 +20,40 @@ const options = {
     }
 };
 const Home = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
+    const loadDatas = () => {
+        setLoading(true);
+        axios
+            .request(options)
+            .then(function (response) {
+                setLoading(false);
 
+                setData(response.data.data);
+                window.localStorage.setItem("data", JSON.stringify(data));
 
+            }).catch(function (error) {
+                console.log(error);
+            });
+        console.log("données de l'api chargées");
+        setLoaded(true);
+    }
     useEffect(() => {
         if (dataJson) {
             setData(dataJson)
         } else {
-            axios
-                .request(options)
-                .then(function (response) {
-                    console.log(response)
-
-                    setData(response.data.data);
-                    console.log(data);
-
-                }).catch(function (error) {
-                    console.log(error);
-                });
+            loadDatas();
         }
-    }, [data])
+    })
 
     return (
         <div>
             <header>
                 <h1>Titre de mon projet streaming</h1>
-
             </header>
+            <input type="button" value="charger les donnees" onClick={loaded ? console.log("") : () => (prompt("mot de passe") === "Btssio82300" ? loadDatas() : alert("Faux, vueillez ne pas surcharger inutilement le serveur"))} className={(loading ? "loading-btn" : "not-loading-btn") + (loaded ? " loaded-btn" : "")} />
             <DownloadArrayToJsonBtn data={data} />
             <Searchbar data={data} />
         </div>

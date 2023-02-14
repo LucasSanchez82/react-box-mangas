@@ -1,0 +1,26 @@
+input {
+    cursor: pointer;
+
+    .loaded-btn,
+    .loading-btn {
+        cursor: not-allowed;
+    }
+}
+
+.not-loading-btn {
+    background-color: green;
+}
+
+.loading-btn {
+    background-color: orange;
+
+}
+
+.loaded-btn {
+    background-color: red;
+}
+
+.loaded-btn,
+.loading-btn {
+    cursor: not-allowed;
+}
