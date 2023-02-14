@@ -53,8 +53,10 @@ const Home = () => {
             <header>
                 <h1>Titre de mon projet streaming</h1>
             </header>
-            <input type="button" value="charger les donnees" onClick={loaded ? console.log("") : () => (prompt("mot de passe") === "Btssio82300" ? loadDatas() : alert("Faux, vueillez ne pas surcharger inutilement le serveur"))} className={(loading ? "loading-btn" : "not-loading-btn") + (loaded ? " loaded-btn" : "")} />
-            <DownloadArrayToJsonBtn data={data} />
+            <form action="" className='btn-container'>
+                <input type="button" value="charger les donnees" onClick={loaded ? console.log("") : () => (prompt("mot de passe") === "Btssio82300" ? loadDatas() : alert("Faux, vueillez ne pas surcharger inutilement le serveur"))} className={(loading ? "loading-btn" : "not-loading-btn") + (loaded ? " loaded-btn" : "")} />
+                <DownloadArrayToJsonBtn data={data} />
+            </form>
             <Searchbar data={data} />
         </div>
     );

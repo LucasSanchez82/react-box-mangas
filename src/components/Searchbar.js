@@ -10,8 +10,8 @@ const Searchbar = (props) => {
         setFilteredData(props.data.filter(el => el.title.toUpperCase().includes(e.target.value.toUpperCase())));
     }
     return (
-        <div>
-            <input onChange={handleChange} type="text" name="searchbar" id="searchbar" />
+        <div className='content'>
+            <input placeholder='Ex: Naruto...' onChange={handleChange} type="text" name="searchbar" id="searchbar" />
             <Boxs data={filteredData} />
         </div>
     );

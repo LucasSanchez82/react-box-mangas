@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#searchbar {
+    width: 80%;
+    height: 25px;
+    margin: 10px;
+    border-radius: 7px;
+    text-align: center;
+}
